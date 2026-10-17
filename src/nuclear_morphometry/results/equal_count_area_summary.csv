@@ -1,0 +1,3 @@
+cohort,original_fields,feasible_fields,not_found_in_restricted_search,ineligible_fields,timeouts,nonzero_w1_changes_above_tolerance,mean_absolute_w1_change_feasible,max_absolute_w1_change_feasible,maximum_exact_area_residual
+PanNuke,7901,1242,6214,445,0,1242,0.00988382146473846,0.05508530995821696,0
+NuInsSeg,665,122,536,7,0,122,0.005818815249576238,0.022780541615111304,0

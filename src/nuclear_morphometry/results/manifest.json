@@ -1,0 +1,81 @@
+{
+  "schema": "nucmorph.scalar-results.v1",
+  "scope": "Saved scalar outputs; not raw masks, model inference or clinical validation",
+  "source_kernel_sha256": "74c3ac753fd1284981d4ea40e071dbb348df00ee3b9a7bb5872caa72ab1474d4",
+  "files": {
+    "field_contrasts.csv": {
+      "bytes": 3004181,
+      "sha256": "88e79e6b6a0b078cfa1db8569755d2de963aabc53429f955af357ff06fc9b9e9",
+      "rows": 24042,
+      "source_role": "Retained empirical-methodological study derived scalar output"
+    },
+    "paired_effects.csv": {
+      "bytes": 2147,
+      "sha256": "bc57b436f7008133dfb2ad7546642fd581394a2ae0a1f4ce7a9fce2d9c0a6b26",
+      "rows": 6,
+      "source_role": "Archived six-effect independent reference fixture and derived view; production table recomputes means from field_contrasts and intervals from canonical_effects"
+    },
+    "margin_sensitivity.csv": {
+      "bytes": 2464,
+      "sha256": "3bc84e88b407cb07febb0ab605e52d62e4b76db48de2910d147b5fbbf95a87b1",
+      "rows": 24,
+      "source_role": "Retained empirical-methodological study derived scalar output"
+    },
+    "omission_replay.csv": {
+      "bytes": 1564,
+      "sha256": "2f36be3bfc3d7609366d6d4ff4fdc651a107a62a6632575911564e8da9754c0c",
+      "rows": 30,
+      "source_role": "Retained empirical-methodological study derived scalar output"
+    },
+    "coverage_counts.csv": {
+      "bytes": 3969,
+      "sha256": "d31ed3ccace4a58494d768b2c003e1ca52dac12a0fe392eba65187f408abab94",
+      "rows": 36,
+      "source_role": "Retained empirical-methodological study derived scalar output"
+    },
+    "threshold_sensitivity.csv": {
+      "bytes": 8853,
+      "sha256": "837faf005fe444e2169f9711dd244b23bd7e42c31360b8e52ebec9be8a35ca2b",
+      "rows": 54,
+      "source_role": "Retained empirical-methodological study derived scalar output"
+    },
+    "cryo_summary.csv": {
+      "bytes": 2431,
+      "sha256": "35c11c4bb5d147aca70763c6933017dbfb6d3f50334fe03dcbff7622958e806c",
+      "rows": 12,
+      "source_role": "Retained empirical-methodological study derived scalar output"
+    },
+    "metric_family_summary.csv": {
+      "bytes": 6101,
+      "sha256": "78011317c70cf0d9501c9edf5283a0fe39e0514006d222724b22b205c9e8deaf",
+      "rows": 30,
+      "source_role": "Complete 30-condition omission metric-family means; random20 averaged within original fields"
+    },
+    "canonical_effects.csv": {
+      "bytes": 37157,
+      "sha256": "97dcb47b989415176d049b655b6c40700391a15168d93b9d644c0db4d3d2c9ce",
+      "rows": 42,
+      "source_role": "Independent 42-effect interval replay; authority for interval metadata and manuscript direct-change intervals"
+    },
+    "equal_count_area_summary.csv": {
+      "bytes": 377,
+      "sha256": "83b5e431f56334396177d9aab2bc0b560c1a8c24825884858781a7d305e945da",
+      "rows": 2,
+      "source_role": "Complete restricted equal-count/exact-area search accounting; feasibility-conditional descriptive effects"
+    },
+    "equal_count_area_fields.csv": {
+      "bytes": 1532108,
+      "sha256": "3c1ab790e8a1629a2f033cd0b7c4f85e821ee6db4dbe2692b158dae9c83bbced",
+      "rows": 8566,
+      "source_role": "Every original field in restricted native exact-area exchange search, including all unsuccessful and ineligible cases"
+    },
+    "exact_ties.csv": {
+      "bytes": 929,
+      "sha256": "e6b72050da8d8d8db0e082f74e01240deb5add93fa2c03aa123f470ecf3fd8a6",
+      "rows": 6,
+      "source_role": "Exact-zero contrast and strict sign/margin counts generated from original same-roster field contrasts"
+    }
+  },
+  "canonical_interval_authority": "canonical_effects.csv",
+  "intentional_verification_redundancy": "paired_effects.csv and omission_replay.csv are unchanged archived numerical fixtures. Their overlap with canonical_effects and metric_family_summary is intentional independent regression evidence, not duplicate production logic."
+}

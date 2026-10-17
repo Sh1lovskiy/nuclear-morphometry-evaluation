@@ -1,0 +1,7 @@
+cohort,orientation,common_fields,all_contrast_exact_zero,survivor_contrast_exact_zero,either_contrast_exact_zero,both_contrasts_exact_zero,opposite_strict_signs,epsilon,both_absolute_contrasts_above_epsilon,opposite_strict_signs_above_epsilon
+PanNuke,hovernext_convnextv2_tiny_cpv_3c_type minus lsp_detr_swinv2_tiny_64ray_324query,7444,0,0,0,0,2423,0.005,3665,840
+PanNuke,nulite_t_binary_fastvit_t8 minus lsp_detr_swinv2_tiny_64ray_324query,7444,1,0,1,0,2368,0.005,4093,933
+PanNuke,nulite_t_binary_fastvit_t8 minus hovernext_convnextv2_tiny_cpv_3c_type,7444,0,0,0,0,2479,0.005,3870,962
+NuInsSeg,hovernext_convnextv2_tiny_cpv_3c_type minus lsp_detr_swinv2_tiny_64ray_324query,570,0,0,0,0,196,0.005,357,96
+NuInsSeg,nulite_t_binary_fastvit_t8 minus lsp_detr_swinv2_tiny_64ray_324query,570,0,0,0,0,194,0.005,407,127
+NuInsSeg,nulite_t_binary_fastvit_t8 minus hovernext_convnextv2_tiny_cpv_3c_type,570,1,0,1,0,205,0.005,400,129

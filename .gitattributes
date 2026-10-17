@@ -1,0 +1,8 @@
+* text=auto
+*.py text eol=lf
+*.md text eol=lf
+# Preserve SHA-bound derived tables byte-for-byte.
+*.csv -text whitespace=cr-at-eol
+*.json text eol=lf
+*.toml text eol=lf
+*.lock text eol=lf
