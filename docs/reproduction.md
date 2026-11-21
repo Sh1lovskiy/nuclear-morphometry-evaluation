@@ -11,6 +11,7 @@ uv run --locked nucmorph reproduce
 uv run --locked ruff check .
 uv run --locked ruff format --check .
 uv run --locked mypy
+uv run --locked python -m unittest discover -s tests
 uv build --offline --no-config --default-index https://pypi.org/simple
 uv run --locked pip-audit --progress-spinner off
 ```
@@ -22,8 +23,10 @@ build environment by uv; the preceding sync populates its local cache. CI runs t
 static checks but no current pass is asserted without an observed workflow run.
 
 `reproduce` verifies every scalar-file hash and recalculates all six paired means
-and all 24 descriptive-margin rows from saved field-level scalar contrasts. It
-fails on missing/corrupt inputs. It does not regenerate confidence intervals,
+and all 24 descriptive-margin rows from saved field-level scalar contrasts.
+Use `--results` for a copy of the bundled directory, including its unchanged
+`manifest.json`. The command rejects altered manifests and missing or corrupt
+tables. It does not regenerate confidence intervals,
 original mask features, omission per-object records, predictions or trained models.
 The independent numerical verifiers and historical verification records are
 retained in the private research archive outside this repository. They are not

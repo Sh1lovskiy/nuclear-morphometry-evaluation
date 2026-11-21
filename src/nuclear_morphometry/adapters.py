@@ -47,8 +47,12 @@ def _bounded_regular_bytes(path: Path, bound: int) -> bytes:
 
 
 def verified_tables(directory: Path) -> dict[str, list[dict[str, str]]]:
-    """Check supplied integrity descriptions; caller manifests are not authentication."""
-    raw = _bounded_regular_bytes(directory / "manifest.json", 1_000_000)
+    """Verify the bundled result tables or an exact copy of that archive."""
+    manifest_path = directory / "manifest.json"
+    canonical_path = result_directory() / "manifest.json"
+    raw = _bounded_regular_bytes(manifest_path, 1_000_000)
+    if manifest_path != canonical_path and raw != _bounded_regular_bytes(canonical_path, 1_000_000):
+        raise ValueError("Result manifest must match the bundled canonical manifest exactly")
     try:
         manifest: dict[str, Any] = json.loads(raw)
     except RecursionError as error:

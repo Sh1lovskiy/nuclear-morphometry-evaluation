@@ -5,7 +5,7 @@ from collections.abc import Sequence
 
 import numpy as np
 
-from .domain import Mask, objects
+from .domain import Mask, objects, validate_mask
 from .evaluation import evaluate
 
 
@@ -60,6 +60,7 @@ def cdf_selection_shift(
 
 def explain_deletions(reference: Mask, ids: Sequence[int], min_area: int = 16) -> dict[str, object]:
     """Recompute the actual joint measurement change, not a neural attribution."""
+    reference = validate_mask(reference)
     profile = objects(reference, min_area)
     if len(set(ids)) != len(ids) or any(type(x) is not int for x in ids):
         raise ValueError("Removed IDs must be distinct native integers")

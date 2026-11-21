@@ -1,7 +1,6 @@
 # Nuclear Morphometry Evaluation
 
 Repository: https://github.com/Sh1lovskiy/nuclear-morphometry-evaluation
-(currently private; anonymous reviewer access is not established).
 
 How does the choice of evaluated objects change the interpretation of nuclear
 segmentation quality? This CPU package evaluates **saved instance masks**, distinguishes

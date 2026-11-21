@@ -26,7 +26,7 @@ class Objects:
     components: IntArray
 
 
-def validate_mask(mask: Mask) -> Mask:
+def validate_mask(mask: Mask) -> IntArray:
     """Require bounded two-dimensional nonnegative integer labels."""
     mask = np.asarray(mask)
     if mask.ndim != 2 or not all(mask.shape) or mask.size > 1024 * 1024:
@@ -35,10 +35,11 @@ def validate_mask(mask: Mask) -> Mask:
         raise TypeError("Instance labels must have an integer dtype")
     if int(mask.min()) < 0 or int(mask.max()) > np.iinfo(np.int64).max:
         raise ValueError("Instance IDs must lie in the nonnegative int64 range")
-    return mask
+    # Mixed signed and unsigned labels can be promoted to an inexact float during lookup.
+    return mask.astype(np.int64, copy=False)
 
 
-def eligible_map(mask: Mask, ids: IntArray) -> NDArray[np.int32]:
+def eligible_map(mask: IntArray, ids: IntArray) -> NDArray[np.int32]:
     """Compact eligible native IDs without allocating by the maximum label."""
     if not len(ids):
         return np.zeros(mask.shape, np.int32)
@@ -54,7 +55,7 @@ def objects(mask: Mask, min_area: int = 16) -> Objects:
     if type(min_area) is not int or min_area < 1:
         raise ValueError("The minimum area must be a positive integer")
     ids, counts = np.unique(mask, return_counts=True)
-    ids = ids[(ids > 0) & (counts >= min_area)].astype(np.int64)
+    ids = ids[(ids > 0) & (counts >= min_area)]
     border_ids = np.unique(np.concatenate((mask[0], mask[-1], mask[:, 0], mask[:, -1])))
     area, eccentricity, components = [], [], []
     for region in regionprops(eligible_map(mask, ids), cache=False):
